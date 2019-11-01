@@ -5,10 +5,10 @@ function start(){
        bedroom()
     }
     else if (room === 'köket') {
-        const goToKitchen = prompt('Nu är du i köket. Du kanske är hungrig med tanke på att du har gått till köket, Vill du gå till kylen eller gå till spisen?');
+       livingKitchen()
     }
     else if (room ==='vardagsrummet'){
-        const goToLivingroom = prompt('Du är i vardagsrummet, antagligen är du hyfsat trött. Det finns en fin natur på utsidan du kanske vill titta ut genom fönstret eller vill du kanske dega framför tvn?')
+       livingRoom()
     }
     else {
          alert('inget giltligt kommando, skriv in sovrummet, köket eller vardagsrummet');
@@ -30,7 +30,46 @@ function bedroom(){
         start()
     } 
     else {
-        alert('inget giltligt kommando, skriv in sovrummet, köket eller vardagsrummet');
+        alert('inget giltligt kommando, skriv in "sova", "spela" eller "gå tillbaka"');
         bedroom()
+    }
+}
+
+start()
+
+function livingKitchen(){
+    const userchoice = prompt('Nu är du i köket det finns kanske något gött i kylen eller om du är mer ambitjös finns det något att laga på spisen, eller varför inte ta en tur i sovrummet eller gå till vardagsrummet o se vad det finns för spenade där?');
+    
+    if (userchoice==='kylen'){
+        goToFridge()
+    } else if(userchoice==='spisen'){
+        goToStove()
+    } else if (userchoice==='gå tillbaka') {
+        start()
+    } else if (userchoice==='gå till sovrummet') {
+        bedroom()
+    } else if (userchoice==='gå till vardagsrummet') {
+        goToLivingroom()
+    } else {
+        alert('inget giltligt kommando, skriv "kylen", "gå till spisen", "gå till sovrummet", "gå till vardagsrummet" eller gå tillbaka"')
+        livingKitchen()
+    }
+}
+
+
+function livingRoom(){
+    const userchoice = prompt('Nu är du i vardagsrummet, det finns en fin natur utanför fönstret. Det finns en ännu roligare tv att slöa framför. Eller varför inte se om du hittar något intresant i köket om du börjar bli sötsugen.');
+
+    if (userchoice==='titta ut'){
+        goToWindow()
+    } else if(userchoice==='titta på tv'){
+        goToTv()
+    } else if(userchoice==='gå tillbaka'){
+        start()
+    } else if(userchoice==='gå till köket') {
+        livingKitchen()
+    } else {
+        alert('inget giltligt kommando, skriv "titta ut", "titta på tv", "gå tillbaka" eller "gå till köket"')
+        livingRoom()
     }
 }
