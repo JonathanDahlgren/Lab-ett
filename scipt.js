@@ -11,16 +11,16 @@ function start(){
        livingRoom()
     }
     else {
-         alert('inget giltligt kommando, skriv in sovrummet, köket eller vardagsrummet');
+         alert('inget giltligt kommando, skriv in "sovrummet", "köket" eller "vardagsrummet"');
          start()
     }
 
 }
 
-start()
+start()             //Varför ska jag ha detta?
 
 function bedroom(){
-    const userchoice = prompt('Nu är du i sovrummet. Det finns en säng om du är trött, eller så finns det lite spel på datorn eller gå tillbaka till hallen. Vad vill du göra nu?');
+    const userchoice = prompt('Nu är du i sovrummet. Det finns en säng om du är trött, eller så finns det lite spel på datorn eller gå tillbaka till hallen eller varför inte hämta något gött i köket. Vad vill du göra nu?');
 
     if (userchoice==='sova'){
         sleep()
@@ -28,9 +28,10 @@ function bedroom(){
         playOnComputer()
     } else if(userchoice==='gå tillbaka') {
         start()
-    } 
-    else {
-        alert('inget giltligt kommando, skriv in "sova", "spela" eller "gå tillbaka"');
+    } else if(userchoice==='köket') {
+        livingKitchen()
+    } else {
+        alert('inget giltligt kommando, skriv in "sova", "spela", "köket" eller "gå tillbaka"');
         bedroom()
     }
 }
@@ -46,16 +47,17 @@ function livingKitchen(){
         goToStove()
     } else if (userchoice==='gå tillbaka') {
         start()
-    } else if (userchoice==='gå till sovrummet') {
+    } else if (userchoice==='sovrummet') {
         bedroom()
-    } else if (userchoice==='gå till vardagsrummet') {
-        goToLivingroom()
+    } else if (userchoice==='vardagsrummet') {
+        livingRoom()
     } else {
-        alert('inget giltligt kommando, skriv "kylen", "gå till spisen", "gå till sovrummet", "gå till vardagsrummet" eller gå tillbaka"')
+        alert('inget giltligt kommando, skriv "kylen", "spisen", "sovrummet", "vardagsrummet" eller gå tillbaka"')
         livingKitchen()
     }
 }
 
+start()             // varför ska jag ha start här?
 
 function livingRoom(){
     const userchoice = prompt('Nu är du i vardagsrummet, det finns en fin natur utanför fönstret. Det finns en ännu roligare tv att slöa framför. Eller varför inte se om du hittar något intresant i köket om du börjar bli sötsugen.');
@@ -66,10 +68,10 @@ function livingRoom(){
         goToTv()
     } else if(userchoice==='gå tillbaka'){
         start()
-    } else if(userchoice==='gå till köket') {
+    } else if(userchoice==='köket') {
         livingKitchen()
     } else {
-        alert('inget giltligt kommando, skriv "titta ut", "titta på tv", "gå tillbaka" eller "gå till köket"')
+        alert('inget giltligt kommando, skriv "titta ut", "titta på tv", "gå tillbaka" eller "köket"')
         livingRoom()
     }
 }
