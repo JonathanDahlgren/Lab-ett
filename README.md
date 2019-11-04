@@ -7,3 +7,4 @@ Om spelaren någon gång skulle skriva fel eller skriva någon aktivtet som inte
 
 Demo: https://jonathandahlgren.github.io/Lab-ett/.
 
+Repo: https://github.com/JonathanDahlgren/Lab-ett
