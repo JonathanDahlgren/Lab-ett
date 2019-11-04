@@ -98,7 +98,7 @@ function goToStove()  {
 }
 
 function goToWindow()  {
-    alert('Du tittar nu ut igenom fönstret... Tryck okej när du är klar')
+    alert('Du tittar nu ut igenom ett fönstret... Tryck okej när du är klar')
     setTimeout(livingRoom, 1000)
 }
 
